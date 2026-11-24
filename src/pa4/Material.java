@@ -1,13 +1,17 @@
 package pa4;
 
+import java.lang.reflect.Constructor;
 import java.util.Locale;
 
+//Declaración de la clase abstracta
 public abstract class Material implements Identificable {
+    //Atributos comunes
     private final String codigo;
     private final String nombre;
     private double stock;
     private final String unidad;
 
+    //Constructor y validaciones
     public Material(String codigo, String nombre, double stock, String unidad) {
         if (codigo == null || codigo.trim().isEmpty() || nombre == null
                 || nombre.trim().isEmpty() || unidad == null || unidad.trim().isEmpty()
@@ -26,6 +30,7 @@ public abstract class Material implements Identificable {
     public double getStock() { return stock; }
     public String getUnidad() { return unidad; }
 
+// Registrar entrada de stock y validar la cantidad
     public boolean registrarEntrada(double cantidad) {
         if (!Double.isFinite(cantidad) || cantidad <= 0
                 || !Double.isFinite(stock + cantidad)) return false;
@@ -33,21 +38,24 @@ public abstract class Material implements Identificable {
         return true;
     }
 
+   // Registrar salida de stock y evitar existencias negativas
     public boolean registrarSalida(double cantidad) {
         if (!Double.isFinite(cantidad) || cantidad <= 0 || cantidad > stock) return false;
         stock -= cantidad;
         return true;
     }
 
+    // Métodos abstractos que implementarán las clases hijas
     public abstract String getTipo();
     public abstract String getDetalle();
 
+    // Comparar materiales mediante su código
     @Override
     public String toString() {
         return codigo + " | " + nombre + " | " + stock + " " + unidad
                 + " | " + getTipo() + " | " + getDetalle();
     }
-
+    // Generar hash por código
     @Override
     public final boolean equals(Object obj) {
         if (this == obj) return true;
