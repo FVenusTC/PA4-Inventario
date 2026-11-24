@@ -7,6 +7,39 @@ Sistema Java de consola para registrar insumos y productos terminados, controlar
 ## Diseño
 Material implementa Identificable y define atributos comunes y operaciones de stock. Las clases derivadas implementarán getTipo y getDetalle. La igualdad por código inmutable permitirá evitar duplicados en HashSet. El código se normaliza a mayúsculas y se eliminan espacios exteriores. El stock es double para admitir cantidades fraccionarias. Las operaciones de stock devuelven boolean; false indica rechazo sin modificar el stock.
 
+### Diagrama de clases
+
+```mermaid
+classDiagram
+    Identificable <|.. Material
+    Material <|-- Insumo
+    Material <|-- ProductoTerminado
+
+    class Identificable {
+        <<interface>>
+        +getCodigo() String
+    }
+
+    class Material {
+        <<abstract>>
+        -String codigo
+        -String nombre
+        -double stock
+        -String unidad
+        +registrarEntrada(double cantidad) boolean
+        +registrarSalida(double cantidad) boolean
+        +getTipo() String
+        +getDetalle() String
+        +toString() String
+        +equals(Object obj) boolean
+        +hashCode() int
+    }
+
+    class Insumo
+    class ProductoTerminado
+```
+
+
 ## Compilación de la base
 ```bash
 javac -d out src/pa4/*.java
