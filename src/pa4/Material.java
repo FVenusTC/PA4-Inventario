@@ -1,6 +1,5 @@
 package pa4;
 
-import java.lang.reflect.Constructor;
 import java.util.Locale;
 
 //Declaración de la clase abstracta
