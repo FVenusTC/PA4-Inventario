@@ -105,8 +105,6 @@ java -cp out pa4.PruebaMaterial
 | Código duplicado | Rechazado | Correcto |
 | Stock final | 14 kg | Correcto |
 
-### Evidencias de mi participación
-
 ### Conclusión 
 
 Las pruebas funcionales permitieron comprobar el correcto control de existencias y la prevención de códigos duplicados. Esta implementación facilita la integración de las clases derivadas y las colecciones desarrolladas por los demás integrantes del equipo.
