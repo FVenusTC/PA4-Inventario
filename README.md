@@ -25,7 +25,7 @@ Las capturas de pantalla del funcionamiento y del código se guardarán en la ca
 Integrante 4: Fabriccio Marticorena Colan (Main e integración)
 
 ## Repositorio
-
+https://github.com/FVenusTC/PA4-Inventario.git
 
 ## Video de YouTube
 
