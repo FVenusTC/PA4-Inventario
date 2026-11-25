@@ -241,6 +241,7 @@ java -cp out pa4.PruebaInventario
 | Ordenamiento por nombre | azucar, Caja de infusiones, Papel filtro | Correcto |
 | Eliminación de PT-001 y repetición | true, luego false | Correcto |
 | Cantidad final | 2 | Correcto |
+| Código repetido registrado con otro tipo (ProductoTerminado con código pt-001) | Rechazado | Correcto |
 
 ### Evidencias
 
@@ -248,9 +249,11 @@ java -cp out pa4.PruebaInventario
 
 ![Ejecución completa](capturas/02_Ejecucion_completa_Kathe.png)
 
+![Ejecución con clases reales](capturas/03_Ejecucion_con_clases_reales_Kathe.png)
+
 ### Conclusión
 
-Las pruebas funcionales comprobaron que Inventario registra materiales, rechaza códigos duplicados mediante HashSet, busca por código y por nombre, ordena alfabéticamente y elimina registros correctamente. Las pruebas se realizaron con una clase temporal derivada de Material y se repetirán con Insumo y ProductoTerminado al integrar el proyecto.
+Las pruebas funcionales comprobaron que `Inventario` registra materiales, rechaza códigos duplicados mediante `HashSet`, busca por código y por nombre, ordena alfabéticamente y elimina registros correctamente. La ejecución final se realizó con las clases `Insumo` y `ProductoTerminado`, lo que confirmó que la colección `Set<Material>` almacena ambos tipos y que los duplicados se rechazan por código aunque pertenezcan a clases distintas.
 
 ## Aporte individual - Integrante 4: Fabriccio Marticorena Colan
 

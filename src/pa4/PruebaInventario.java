@@ -2,33 +2,21 @@ package pa4;
 
 public class PruebaInventario {
 
-    // Clase temporal solo para probar, hasta tener Insumo y ProductoTerminado
-    private static class MaterialPrueba extends Material {
-        MaterialPrueba(String codigo, String nombre, double stock, String unidad) {
-            super(codigo, nombre, stock, unidad);
-        }
-
-        @Override
-        public String getTipo() { return "Prueba"; }
-
-        @Override
-        public String getDetalle() { return "-"; }
-    }
-
     public static void main(String[] args) {
         Inventario inv = new Inventario();
 
-        System.out.println("=== REGISTRO ===");
-        System.out.println(inv.registrar(new MaterialPrueba("INS-001", "Papel filtro", 12, "kg")));
-        System.out.println(inv.registrar(new MaterialPrueba("PT-001", "Caja de infusiones", 40, "cajas")));
-        System.out.println(inv.registrar(new MaterialPrueba("INS-002", "azucar", 5, "kg")));
+        System.out.println("=== REGISTRO (esperado: true, true, true) ===");
+        System.out.println(inv.registrar(new Insumo("INS-001", "Papel filtro", 12, "kg", "Proveedor A")));
+        System.out.println(inv.registrar(new ProductoTerminado("PT-001", "Caja de infusiones", 40, "cajas", "Produccion")));
+        System.out.println(inv.registrar(new Insumo("INS-002", "azucar", 5, "kg", "Proveedor B")));
 
-        System.out.println("=== DUPLICADO Y NULL (esperado: false, false) ===");
-        System.out.println(inv.registrar(new MaterialPrueba("ins-001", "Otro nombre", 1, "kg")));
+        System.out.println("=== DUPLICADOS Y NULL (esperado: false, false, false) ===");
+        System.out.println(inv.registrar(new Insumo("ins-001", "Otro nombre", 1, "kg", "Proveedor C")));
+        System.out.println(inv.registrar(new ProductoTerminado("pt-001", "Otra caja", 1, "cajas", "Empaque")));
         System.out.println(inv.registrar(null));
         System.out.println("Cantidad (esperado 3): " + inv.cantidadMateriales());
 
-        System.out.println("=== LISTADO ===");
+        System.out.println("=== LISTADO (Insumo y ProductoTerminado en la misma coleccion) ===");
         for (Material m : inv.listar()) {
             System.out.println(m);
         }
@@ -39,12 +27,15 @@ public class PruebaInventario {
 
         System.out.println("=== BUSQUEDA POR NOMBRE ===");
         System.out.println("PAPEL -> " + inv.buscarPorNombre("PAPEL").size() + " resultado(s)");
+        for (Material m : inv.buscarPorNombre("caja")) {
+            System.out.println("caja -> " + m);
+        }
         System.out.println("zzz -> " + inv.buscarPorNombre("zzz").size() + " resultado(s)");
         System.out.println("vacio -> " + inv.buscarPorNombre("").size() + " resultado(s)");
 
         System.out.println("=== ORDENADO POR NOMBRE ===");
         for (Material m : inv.ordenarPorNombre()) {
-            System.out.println(m.getNombre());
+            System.out.println(m.getNombre() + " (" + m.getTipo() + ")");
         }
 
         System.out.println("=== ELIMINACION ===");
