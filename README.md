@@ -109,7 +109,76 @@ java -cp out pa4.PruebaMaterial
 
 Las pruebas funcionales permitieron comprobar el correcto control de existencias y la prevención de códigos duplicados. Esta implementación facilita la integración de las clases derivadas y las colecciones desarrolladas por los demás integrantes del equipo.
 
-## Aporte individual - Integrante 2:Donny Scrach Gaspar Araujo 
+### Aporte individual - Integrante 2: Donny Scrach Gaspar Araujo
+
+**Responsable:** Donny Scrach Gaspar Araujo.
+
+**Responsabilidad:** Implementación de las clases derivadas Insumo y ProductoTerminado del Sistema de Inventario de Almacén.
+
+### Actividades desarrolladas
+
+- Implementación de la clase `Insumo`, heredada de la clase abstracta `Material`.
+- Implementación de la clase `ProductoTerminado`, heredada de la clase abstracta `Material`.
+- Aplicación de herencia mediante la palabra reservada `extends`.
+- Reutilización del constructor de la clase padre mediante `super()`.
+- Implementación del atributo privado `proveedor` en la clase Insumo.
+- Implementación del atributo privado `areaProduccion` en la clase ProductoTerminado.
+- Aplicación de encapsulamiento mediante atributos privados y métodos getters.
+- Validación de los datos específicos de cada clase para evitar valores nulos o vacíos.
+- Sobrescritura de los métodos abstractos `getTipo()` y `getDetalle()` mediante `@Override`.
+- Desarrollo de una clase auxiliar denominada `PruebaDonny` para verificar el funcionamiento de ambas clases.
+- Ejecución de pruebas de creación de objetos y visualización de sus atributos heredados y específicos.
+
+### Archivos desarrollados
+
+| Archivo | Descripción |
+|---|---|
+| Insumo.java | Clase derivada de Material que representa los insumos e incorpora el atributo proveedor. |
+| ProductoTerminado.java | Clase derivada de Material que representa los productos terminados e incorpora el área de producción. |
+| PruebaDonny.java | Clase auxiliar para comprobar la creación y funcionamiento de objetos de ambas clases. |
+
+### Métodos implementados
+
+| Clase | Método | Descripción |
+|---|---|---|
+| Insumo | getProveedor() | Devuelve el proveedor del insumo. |
+| Insumo | getTipo() | Devuelve la identificación del tipo de material. |
+| Insumo | getDetalle() | Devuelve la información del proveedor. |
+| ProductoTerminado | getAreaProduccion() | Devuelve el área de producción. |
+| ProductoTerminado | getTipo() | Devuelve la identificación del producto terminado. |
+| ProductoTerminado | getDetalle() | Devuelve la información del área de producción. |
+
+### Compilación y ejecución de las pruebas
+
+```bash
+javac -d out src/pa4/*.java
+java -cp out pa4.PruebaDonny
+```
+
+### Resultados de las pruebas funcionales
+
+| Prueba | Resultado | Estado |
+|---|---|---|
+| Creación de objeto Insumo | Aceptada | Correcto |
+| Creación de objeto ProductoTerminado | Aceptada | Correcto |
+| Inicialización de atributos heredados | Correcta | Correcto |
+| Obtención del proveedor | Proveedor Nacional | Correcto |
+| Obtención del área de producción | Producción | Correcto |
+| Sobrescritura de getTipo() | Ambos tipos identificados | Correcto |
+| Sobrescritura de getDetalle() | Detalles mostrados correctamente | Correcto |
+| Compilación y ejecución | Sin errores | Correcto |
+
+### Evidencias
+
+- Código fuente de Insumo.java.
+- Código fuente de ProductoTerminado.java.
+- Compilación y ejecución de PruebaDonny.java.
+- Archivos publicados en el repositorio GitHub.
+
+### Conclusión
+
+La implementación permitió comprobar el funcionamiento de las clases derivadas Insumo y ProductoTerminado mediante herencia, reutilización de constructores, encapsulamiento y sobrescritura de métodos. Las pruebas realizadas verificaron la creación de objetos y la recuperación de sus atributos específicos, permitiendo su integración con la clase abstracta Material y el sistema de inventario desarrollado por el equipo.
+
 
 
 
