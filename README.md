@@ -190,7 +190,7 @@ La implementación permitió comprobar el funcionamiento de las clases derivadas
 
 ### Actividades desarrolladas
 
-- Implementación de la clase Inventario con una colección genérica Set<Material> basada en HashSet.
+- Implementación de la clase Inventario con una colección genérica `Set<Material>` basada en `HashSet`.
 - Registro de materiales con add(), impidiendo códigos repetidos mediante equals() y hashCode() de Material.
 - Recorrido de la colección para listar los materiales y obtener la cantidad con size().
 - Búsqueda lineal por código y búsqueda por coincidencia parcial en el nombre.
