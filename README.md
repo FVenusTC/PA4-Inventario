@@ -257,6 +257,52 @@ Las pruebas funcionales comprobaron que `Inventario` registra materiales, rechaz
 
 ## Aporte individual - Integrante 4: Fabriccio Marticorena Colan
 
+**Responsable:** Marticorena Colan Fabriccio.
+
+**Responsabilidad:** Menú principal de consola, integración de componentes y pruebas del Sistema de Inventario de Almacén.
+
+### Actividades desarrolladas
+
+- Implementación de la clase principal Main con el menú interactivo por consola.
+- Integración de las clases del paquete pa4 (Material, Insumo, ProductoTerminado e Inventario) sin duplicar lógica de colección en Main.
+- Instanciación polimórfica de objetos Insumo y ProductoTerminado según la opción elegida por el usuario.
+- Invocación de los métodos de Inventario para registrar, listar, buscar por código, buscar por nombre, ordenar alfabéticamente y eliminar materiales.
+- Integración de movimientos de entrada y salida de stock utilizando los métodos de Material.
+- Validación de entradas del usuario por consola (campos vacíos, tipos numéricos, valores negativos y opciones inválidas) con mensajes claros.
+- Compilación y ejecución integral del sistema completo.
+
+### Archivos desarrollados
+
+| Archivo | Descripción |
+|---|---|
+| Main.java | Clase principal que gestiona el menú de consola, las validaciones de entrada y la integración con Inventario. |
+
+### Métodos implementados
+
+| Método | Descripción |
+|---|---|
+| main(String[]) | Inicia el ciclo principal del menú y coordina el flujo de opciones del usuario. |
+| mostrarMenu() | Despliega en consola las opciones disponibles del sistema de inventario. |
+| registrarMaterial(Scanner, Inventario) | Solicita los datos, instancia Insumo o ProductoTerminado y los registra en el inventario. |
+| listarMateriales(Inventario) | Muestra todos los materiales registrados y el total acumulado. |
+| buscarPorCodigo(Scanner, Inventario) | Consulta y muestra un material específico a partir de su código. |
+| buscarPorNombre(Scanner, Inventario) | Filtra y lista materiales por coincidencia parcial en el nombre. |
+| ordenarPorNombre(Inventario) | Muestra la lista de materiales ordenados alfabéticamente por nombre. |
+| actualizarStock(Scanner, Inventario) | Gestiona entradas y salidas de existencias validando disponibilidad. |
+| eliminarPorCodigo(Scanner, Inventario) | Elimina un material del inventario según su código. |
+
+### Resultados de las pruebas funcionales
+
+| Prueba | Resultado | Estado |
+|---|---|---|
+| Registro de Insumo y Producto Terminado | Aceptados | Correcto |
+| Código repetido y entrada inválida | Rechazados | Correcto |
+| Listado y cantidad total | 2 materiales | Correcto |
+| Búsqueda por código y nombre | Coincidencias mostradas | Correcto |
+| Ordenamiento por nombre | Orden alfabético | Correcto |
+| Entrada y salida de stock | Stock actualizado | Correcto |
+| Eliminación por código | Eliminado | Correcto |
+
 
 ## Repositorio
 https://github.com/FVenusTC/PA4-Inventario.git
