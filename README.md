@@ -308,4 +308,5 @@ Las pruebas funcionales comprobaron que `Inventario` registra materiales, rechaz
 https://github.com/FVenusTC/PA4-Inventario.git
 
 ## Video de YouTube
-
+https://youtu.be/KeFReo0eejE
+ 
